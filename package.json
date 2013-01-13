@@ -1,0 +1,12 @@
+{
+  "name": "Node",
+  "version": "1.0.0",  
+  "scripts":{
+    "test":"mocha --compilers coffee:coffee-script"
+  },
+  "devDependencies": {
+    "amd-loader":"*",
+    "mocha":"*",
+    "coffee-script":"*"
+  }
+}
