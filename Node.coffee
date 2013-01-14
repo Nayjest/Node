@@ -75,6 +75,14 @@ define [], ->
     ###
     getParent:()-> @_parent
 
+    getParents: ->
+      parent = null
+      res = []
+      while parent = @getParent()
+        res.push parent
+      res
+
+
     ###
     @param {Node} child
     @return {Boolean} true if child belongs to this object
@@ -89,7 +97,7 @@ define [], ->
     @return Array[Node]
     ###
     getChildrenDeep: () ->
-      res = [].concat @_children
+      res = @_children.slice 0
       for node in @_children
         res = res.concat node.getAllChildrenRecursive()
       res
