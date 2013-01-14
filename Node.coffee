@@ -86,13 +86,16 @@ define [], ->
     ###
     getParent:()-> @_parent
 
+    ###
+    Returns list of parents
+    @return {Array<Node>}
+    ###
     getParents: ->
       parent = null
       res = []
       while parent = @getParent()
         res.push parent
       res
-
 
     ###
     Checks that object has specified child node
