@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>CoffeeScript API Documentation</title>
+    <link rel='stylesheet' href='assets/codo.css' type='text/css'>
+    <script src='assets/codo.js'></script>
+    <script src='assets/search_data.js'></script>
+</head>
+<body>
+<div id='base' data-path='../'></div>
+<div id='header'>
+    <div id='fuzzySearch'>
+        <input type='text'>
+        <ol></ol>
+    </div>
+</div>
+<div id='content'>
+<h1>
+    Class:
+    Node
+</h1>
+<table class='box'>
+    <tr>
+        <td>Defined in:</td>
+        <td>Node.coffee</td>
+    </tr>
+</table>
+<h2>Overview</h2>
+
+<div class='docstring'>
+    <p>Class for organizing objects hierarchy (tree)
+        Limitations:
+        <em> object can belongs only to one parent
+        </em> all elements of hierarchy must be instances of Node class</p>
+</div>
+<div class='tags'>
+</div>
+<h2>Instance Method Summary</h2>
+<ul class='summary'>
+    <li>
+    <span class='signature'>
+      <a href='#constructor-instance'>
+          - (Node) <strong>constructor</strong>(parent, children)
+      </a>
+    </span>
+        <span class='constructor note title'>Constructor</span>
+    <span class='desc'>
+      Creates node
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#getChildren-instance'>
+          - (Array&lt;Node&gt;) <strong>getChildren</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns list of object children
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#setChildren-instance'>
+          - (Node) <strong>setChildren</strong>(children = [])
+      </a>
+    </span>
+    <span class='desc'>
+      Detaches all children and links object to new children array
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#detachChildren-instance'>
+          - (Node) <strong>detachChildren</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Removes all children from object
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#addChild-instance'>
+          - (Node) <strong>addChild</strong>(node)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#setParent-instance'>
+          - (Node) <strong>setParent</strong>(parent = null)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#getParent-instance'>
+          - (Node|null) <strong>getParent</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns parent object if exists
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#hasChild-instance'>
+          - (Boolean) <strong>hasChild</strong>(node)
+      </a>
+    </span>
+    <span class='desc'>
+      Checks that object has specified child node
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#hasChildren-instance'>
+          - (Boolean) <strong>hasChildren</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Checks that object has children
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#getChildrenDeep-instance'>
+          - (Array&lt;Node&gt;) <strong>getChildrenDeep</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get plain array of all levels node children
+    </span>
+    </li>
+    <li>
+    <span class='signature'>
+      <a href='#detach-instance'>
+          - (Node) <strong>detach</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Remove item from parents children list and set parent to null.
+    </span>
+    </li>
+</ul>
+<h2>Constructor Details</h2>
+
+<div class='methods'>
+    <div class='method_details'>
+        <p class='signature' id='constructor-instance'>
+            - (Node) <strong>constructor</strong>(parent, children)
+        </p>
+
+        <div class='docstring'>
+            <p>Creates node</p>
+        </div>
+        <div class='tags'>
+            <h3>Parameters:</h3>
+            <ul class='param'>
+                <li>
+                    <span class='name'>parent</span>
+      <span class='type'>
+        (<tt>Node|null</tt>)
+      </span>
+                </li>
+                <li>
+                    <span class='name'>children</span>
+      <span class='type'>
+        (<tt>Array&lt;<a href='#'>Node</a>&gt;|null</tt>)
+      </span>
+                </li>
+            </ul>
+            <h3>Returns:</h3>
+            <ul class='return'>
+                <li>
+                    <span class='type'></span>
+                    (<tt><a href='#'>Node</a></tt>)
+                    &mdash;
+                    <span class='desc'>new instance</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<h2>Instance Method Details</h2>
+
+<div class='methods'>
+<div class='method_details'>
+    <p class='signature' id='getChildren-instance'>
+        - (Array&lt;Node&gt;) <strong>getChildren</strong>()
+    </p>
+
+    <div class='docstring'>
+        <p>Returns list of object children</p>
+    </div>
+    <div class='tags'>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt>Array&lt;<a href='#'>Node</a>&gt;</tt>)
+                &mdash;
+                <span class='desc'>children list</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='setChildren-instance'>
+        - (Node) <strong>setChildren</strong>(children = [])
+    </p>
+
+    <div class='docstring'>
+        <p>Detaches all children and links object to new children array</p>
+    </div>
+    <div class='tags'>
+        <h3>Parameters:</h3>
+        <ul class='param'>
+            <li>
+                <span class='name'>children</span>
+      <span class='type'>
+        (<tt>Array&lt;<a href='#'>Node</a>&gt;|null</tt>)
+      </span>
+            </li>
+        </ul>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt><a href='#'>Node</a></tt>)
+                &mdash;
+                <span class='desc'>this</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='detachChildren-instance'>
+        - (Node) <strong>detachChildren</strong>()
+    </p>
+
+    <div class='docstring'>
+        <p>Removes all children from object</p>
+    </div>
+    <div class='tags'>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt><a href='#'>Node</a></tt>)
+                &mdash;
+                <span class='desc'>this</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='addChild-instance'>
+        - (Node) <strong>addChild</strong>(node)
+    </p>
+
+    <div class='tags'>
+        <h3>Parameters:</h3>
+        <ul class='param'>
+            <li>
+                <span class='name'>parent</span>
+      <span class='type'>
+        (<tt><a href='#'>Node</a></tt>)
+      </span>
+            </li>
+        </ul>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt><a href='#'>Node</a></tt>)
+                &mdash;
+                <span class='desc'>this</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='setParent-instance'>
+        - (Node) <strong>setParent</strong>(parent = null)
+    </p>
+
+    <div class='tags'>
+        <h3>Parameters:</h3>
+        <ul class='param'>
+            <li>
+                <span class='name'>parent</span>
+      <span class='type'>
+        (<tt>Node|null</tt>)
+      </span>
+            </li>
+        </ul>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt><a href='#'>Node</a></tt>)
+                &mdash;
+                <span class='desc'>this</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='getParent-instance'>
+        - (Node|null) <strong>getParent</strong>()
+    </p>
+
+    <div class='docstring'>
+        <p>Returns parent object if exists</p>
+    </div>
+    <div class='tags'>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt>Node|null</tt>)
+                &mdash;
+                <span class='desc'>parent if exists</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='hasChild-instance'>
+        - (Boolean) <strong>hasChild</strong>(node)
+    </p>
+
+    <div class='docstring'>
+        <p>Checks that object has specified child node</p>
+    </div>
+    <div class='tags'>
+        <h3>Parameters:</h3>
+        <ul class='param'>
+            <li>
+                <span class='name'>child</span>
+      <span class='type'>
+        (<tt><a href='#'>Node</a></tt>)
+      </span>
+            </li>
+        </ul>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt>Boolean</tt>)
+                &mdash;
+                <span class='desc'>true if child belongs to this object</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='hasChildren-instance'>
+        - (Boolean) <strong>hasChildren</strong>()
+    </p>
+
+    <div class='docstring'>
+        <p>Checks that object has children </p>
+    </div>
+    <div class='tags'>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt>Boolean</tt>)
+                &mdash;
+                <span class='desc'>true if object has any children</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='getChildrenDeep-instance'>
+        - (Array&lt;Node&gt;) <strong>getChildrenDeep</strong>()
+    </p>
+
+    <div class='docstring'>
+        <p>Get plain array of all levels node children</p>
+    </div>
+    <div class='tags'>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span><tt>Array&lt;<a href='#'>Node</a>&gt;</tt></li>
+        </ul>
+    </div>
+</div>
+<div class='method_details'>
+    <p class='signature' id='detach-instance'>
+        - (Node) <strong>detach</strong>()
+    </p>
+
+    <div class='docstring'>
+        <p>Remove item from parents children list and set parent to null.
+            If have no parent, do nothing.</p>
+    </div>
+    <div class='tags'>
+        <h3>Returns:</h3>
+        <ul class='return'>
+            <li>
+                <span class='type'></span>
+                (<tt><a href='#'>Node</a></tt>)
+                &mdash;
+                <span class='desc'>this</span>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+<div id='footer'>
+    Generated on
+    Mon Jan 14 2013 17:00:47 GMT+0200 (FLE Standard Time)
+    by
+    <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+    v1.5.1
+    (Node.js v0.8.10).
+</div>
+</body>
+</html>
