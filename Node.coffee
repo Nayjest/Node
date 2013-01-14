@@ -12,11 +12,18 @@ define [], ->
     parent._children.push child
     child._parent = parent
 
+  ###
+  Class for organizing objects hierarchy (tree)
+  Limitations: 
+  * object can belongs only to one parent
+  * all elements of hierarchy must be instances of Node class
+  ###
   class Node
 
     ###
+    Creates node
     @param {Node|null} parent
-    @param {Array<Node>} children
+    @param {Array<Node>|null} children
     @return {Node} new instance
     ###
     constructor:(parent, children) ->
@@ -28,12 +35,14 @@ define [], ->
     isNode: true
 
     ###
+    Returns list of object children
     @return {Array<Node>} children list
     ###
     getChildren: -> @_children
 
     ###
-    @param {Array<Node>} children
+    Detaches all  children and links object to new children array
+    @param {Array<Node>|null} children
     @return {Node} this
     ###
     setChildren: (children = [])->
@@ -43,6 +52,7 @@ define [], ->
       @
 
     ###
+    Removes all children from object
     @return {Node} this
     ###
     detachChildren: ->
@@ -71,22 +81,28 @@ define [], ->
       @
 
     ###
+    Returns parent object if exists
     @return {Node|null} parent if exists
     ###
     getParent:()-> @_parent
 
     ###
+    Checks that object has specified child node
     @param {Node} child
     @return {Boolean} true if child belongs to this object
     ###
     hasChild: (node) ->
       @_children.indexOf(node) isnt -1
 
+    ###
+    Checks that object has children    
+    @return {Boolean} true if object has any children
+    ###
     hasChildren: -> @_children.length isnt 0
 
     ###
     Get plain array of all levels node children
-    @return Array[Node]
+    @return {Array<Node>}
     ###
     getChildrenDeep: () ->
       res = [].concat @_children
@@ -97,7 +113,7 @@ define [], ->
     ###
     Remove item from parents children list and set parent to null.
     If have no parent, do nothing.
-    @return Node this
+    @return {Node} this
     ###
     detach: ->
       if @_parent
