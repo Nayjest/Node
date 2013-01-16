@@ -91,10 +91,10 @@ define [], ->
     @return {Array<Node>}
     ###
     getParents: ->
-      parent = null
+      next = @
       res = []
-      while parent = @getParent()
-        res.push parent
+      while next = next.getParent()
+        res.push next
       res
 
     ###

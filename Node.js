@@ -21,10 +21,18 @@ Node module
       parent._children.push(child);
       return child._parent = parent;
     };
+    /*
+      Class for organizing objects hierarchy (tree)
+      Limitations: 
+      * object can belongs only to one parent
+      * all elements of hierarchy must be instances of Node class
+    */
+
     return Node = (function() {
       /*
+          Creates node
           @param {Node|null} parent
-          @param {Array<Node>} children
+          @param {Array<Node>|null} children
           @return {Node} new instance
       */
 
@@ -37,6 +45,7 @@ Node module
       Node.prototype.isNode = true;
 
       /*
+          Returns list of object children
           @return {Array<Node>} children list
       */
 
@@ -46,7 +55,8 @@ Node module
       };
 
       /*
-          @param {Array<Node>} children
+          Detaches all  children and links object to new children array
+          @param {Array<Node>|null} children
           @return {Node} this
       */
 
@@ -65,6 +75,7 @@ Node module
       };
 
       /*
+          Removes all children from object
           @return {Node} this
       */
 
@@ -111,6 +122,7 @@ Node module
       };
 
       /*
+          Returns parent object if exists
           @return {Node|null} parent if exists
       */
 
@@ -120,6 +132,23 @@ Node module
       };
 
       /*
+          Returns list of parents
+          @return {Array<Node>}
+      */
+
+
+      Node.prototype.getParents = function() {
+        var next, res;
+        next = this;
+        res = [];
+        while (next = next.getParent()) {
+          res.push(next);
+        }
+        return res;
+      };
+
+      /*
+          Checks that object has specified child node
           @param {Node} child
           @return {Boolean} true if child belongs to this object
       */
@@ -129,19 +158,25 @@ Node module
         return this._children.indexOf(node) !== -1;
       };
 
+      /*
+          Checks that object has children    
+          @return {Boolean} true if object has any children
+      */
+
+
       Node.prototype.hasChildren = function() {
         return this._children.length !== 0;
       };
 
       /*
           Get plain array of all levels node children
-          @return Array[Node]
+          @return {Array<Node>}
       */
 
 
       Node.prototype.getChildrenDeep = function() {
         var node, res, _i, _len, _ref;
-        res = [].concat(this._children);
+        res = this._children.slice(0);
         _ref = this._children;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           node = _ref[_i];
@@ -153,7 +188,7 @@ Node module
       /*
           Remove item from parents children list and set parent to null.
           If have no parent, do nothing.
-          @return Node this
+          @return {Node} this
       */
 
 
