@@ -26,7 +26,7 @@ define [], ->
     @param {Array<Node>|null} children
     @return {Node} new instance
     ###
-    constructor:(parent, children) ->
+    constructor: (parent, children) ->
       @_children = []
       @setParent parent
       @setChildren children
@@ -84,7 +84,7 @@ define [], ->
     Returns parent object if exists
     @return {Node|null} parent if exists
     ###
-    getParent:()-> @_parent
+    getParent: ()-> @_parent
 
     ###
     Returns list of parents
@@ -96,6 +96,13 @@ define [], ->
       while next = next.getParent()
         res.push next
       res
+
+    ###
+    Returns root node
+    @return {Node}
+    ###
+    getRoot: ->
+      @getParents().pop()
 
     ###
     Checks that object has specified child node

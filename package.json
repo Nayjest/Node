@@ -1,6 +1,8 @@
 {
   "name": "Node",
-  "version": "1.0.0",  
+  "version": "1.0.1",
+  "author": "Vitalii [Nayjest] Stepanenko <gmail@vitaliy.in>",
+  "description":"Javascript class for organizing objects hierarchy",
   "scripts":{
     "test":"mocha --compilers coffee:coffee-script"
   },
@@ -8,5 +10,10 @@
     "amd-loader":"*",
     "mocha":"*",
     "coffee-script":"*"
-  }
+  },
+  "repository": {
+        "type": "git",
+        "url": "git://github.com/Nayjest/Node.git"
+  },
+  "license": "MIT"
 }

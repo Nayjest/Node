@@ -148,6 +148,16 @@ Node module
       };
 
       /*
+          Returns root node
+          @return {Node}
+      */
+
+
+      Node.prototype.getRoot = function() {
+        return this.getParents().pop();
+      };
+
+      /*
           Checks that object has specified child node
           @param {Node} child
           @return {Boolean} true if child belongs to this object
