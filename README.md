@@ -1,7 +1,7 @@
 Node
 ====
 
-Javascript class for organizing objects hierarchy.
+Javascript class for organizing objects hierarchy (tree).
 
 Node class is given in form of AMD module for convenient usage in browser scripts.
 
