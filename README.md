@@ -12,7 +12,7 @@ Node class is given in form of AMD module for convenient usage in browser script
 
 [Node class API documentation](http://nayjest.github.com/Node/doc/Node.html)
 
-** License **
+**License**
 
 Copyright 2012 Vitalii Stepanenko
 
